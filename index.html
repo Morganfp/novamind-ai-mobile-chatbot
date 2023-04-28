@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#009578">
+    <title>Gym Time</title>
+    <!-- Reference the manifest -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="images/logo192.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>NovaMind</h1>
+        <div class="menu">
+          <img class="Settings" src="images/Settings.png">
+        </div>
+    </header>
+
+    <!-- Heading -->
+    <h2>
+        <img class="Brain" src="images/AI-brain-down.png" alt="AI Brain" style="float: left; margin-right: 10px;">
+        Where AI meets creativity
+        <img class="Brain" src="images/AI-brain-up.png" alt="AI Brain" style="float: right; margin-left: 10px;">
+    </h2>
+
+    <!-- Boxes -->
+    <div class="grid-container">
+        <div class="column">
+          <!-- <p class="Box-heading">Examples</p> -->
+          <div class="box">
+            <p class="Box-text">“What’s the meaning of life, the universe, and everything?”</p>
+          </div>
+          <div class="box">
+            <p class="Box-text">"Is determining whether P = NP an unsolvable problem?"</p>
+          </div>
+          <div class="box">
+            <p class="Box-text"> "What is the Halting Problem and why is it important?"</p>
+          </div>
+        </div>
+        <div class="column">
+          <!-- <p class="Box-heading">Cababilities</p> -->
+          <div class="box">
+            <p class="Box-text">Remembers what user said earlier in the conversation</p>
+          </div>
+          <div class="box">
+            <p class="Box-text">Allows user to provide follow-up corrections</p>
+          </div>
+          <div class="box">
+            <p class="Box-text">Trained to decline inappropriate requests</p>
+          </div>
+        </div>
+      </div>
+
+    <!-- Input field -->
+    <form>
+        <input type="text" placeholder="Send a message" class="input-field">
+        <button type="submit" class="input-button"></button>
+    </form>
+
+    <!-- Load the service worker -->
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("sw.js").then(register => {
+                console.log("SW Registered!");
+                console.log(register);
+            }).catch(error => {
+                console.log("SW Registered Failed!");
+                console.log(error);
+            })
+        }
+    </script>
+
+    <!-- JavaScript for submit button and text display -->
+    <script>
+        
+    </script>
+
+</body>
+</html>

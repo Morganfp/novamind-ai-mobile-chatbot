@@ -1,0 +1,109 @@
+body {
+    background: linear-gradient(#6196ba 50%, #a3ccf0 50%);
+    font-family: "Oswald", sans-serif;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    height: 100vh;
+    color: #e7ecef;
+  }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    /* padding: 20px; */
+    background-color: #6196ba;
+    /* font-size: 24px; */
+    font-weight: bold;
+    /* margin: 2%; */
+}
+
+h1 {
+    font-size: 50px;
+    color: #ffffff;
+}
+
+.Settings {
+    padding-top: 15px;
+    width: 35px;
+    height: 35px;
+}
+
+h2 {
+    font-size: 20px;
+    color: #2D2D2D;
+}
+
+.Brain {
+    width: 27px;
+    height: 27px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.column {
+    padding: 0px;
+    border-radius: 15px;
+}
+
+.box {
+    background-color: #264c77;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    width: 150px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .Box-heading {
+    font-size: 30px;
+    color: #ffffff;
+} */
+
+.Box-text {
+    font-size: 13px;
+    color: #ffffff;
+}
+
+.input-field {
+    margin-top: 80px;
+    border: 1.5px solid #8b8c89;
+    border-radius: 5px;
+    padding: 15px;
+    width: 270px;
+    height: 25px;
+    font-size: 17px;
+}
+  
+  .input-field:focus {
+    outline: none;
+    border: 1px solid #6196ba;
+}
+  
+.input-button {
+    background-image: url("images/Submit-button.png");
+    background-size: cover;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    border: none;
+    margin-left: -40px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    background-color: transparent;
+    vertical-align: middle;
+}
+

@@ -1,0 +1,22 @@
+{
+    "name": "Gym Time",
+    "short_name": "Gym Time",
+    "start_url": "/gym-timer/",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "images/logo192.png",
+            "sizes": "192x192",
+            "type": "images/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "images/logo512.png",
+            "sizes": "512x512",
+            "type": "images/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
