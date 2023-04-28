@@ -1,7 +1,7 @@
 {
-    "name": "Gym Time",
-    "short_name": "Gym Time",
-    "start_url": "/gym-timer/",
+    "name": "NovaMind",
+    "short_name": "NovaMind",
+    "start_url": "/novamind/",
     "background_color": "#ffffff",
     "theme_color": "#ffffff",
     "display": "standalone",
