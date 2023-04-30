@@ -18,10 +18,14 @@
 <body>
     <!-- Header -->
     <header>
+      <a href="/" class="header-link">
         <h1>NovaMind <span class="beta">(Beta)</span></h1>
+      </a>      
+      <a href="#" class="menu-link">
         <div class="menu">
           <img class="Settings" src="images/Settings.png">
         </div>
+      </a>        
     </header>
 
     <!-- Heading -->
@@ -35,13 +39,13 @@
     <div class="grid-container" id="boxes">
         <div class="column">
           <!-- <p class="Box-heading">Examples</p> -->
-          <div class="box">
-            <p class="Box-text">“What’s the meaning of life, the universe, and everything?”</p>
+          <div class="box" id="box1">
+            <p class="Box-text">“What’s the answer to life, the universe, and everything?”</p>
           </div>
-          <div class="box">
+          <div class="box" id="box2">
             <p class="Box-text">"Is determining whether P = NP an unsolvable problem?"</p>
           </div>
-          <div class="box">
+          <div class="box" id="box3">
             <p class="Box-text"> "What is the Halting Problem and why is it important?"</p>
           </div>
         </div>
@@ -70,9 +74,11 @@
       <button type="submit" class="input-button" id="submit-button"></button>
     </form>
 
+    <!-- <img src="images/Submit-logo.png" style="width:10vw; height:10vw;"> -->
+
     <!-- Call the user input to the sendToOpenAI function -->
     <script>
-        // Get the input field and submit button
+        // Get the elements by id
         const inputField = document.getElementById("user-input");
         const submitButton = document.getElementById("submit-button");
         const boxes = document.getElementById("boxes");
@@ -84,9 +90,13 @@
           // Hide the boxes
           boxes.style.display = "none";
           responseBox.style.display = "block";
-          const userInput = inputField.value; // get the text from the input field
-          // Concatinate ". Make your response less than 100 tokens" ?
-          sendToOpenAI(userInput); // call the function to send the text to OpenAI and display the response
+          // Get the text from the input field
+          let userInput = inputField.value;
+          // Concatinate a string to make the response less than 100 tokens
+          userInput += " (Make your response less than 100 tokens)";
+          console.log(userInput);
+          // Call the function to send the text to OpenAI and display the response
+          sendToOpenAI(userInput);
         });
     </script>
 
@@ -103,9 +113,24 @@
         }
     </script>
 
-    <!-- JavaScript for submit button and text display -->
+    <!-- Select a default text box to fill the user input field -->
     <script>
-        
+      const box1 = document.getElementById('box1');
+      const box2 = document.getElementById('box2');
+      const box3 = document.getElementById('box3');
+      const userInput = document.getElementById('user-input');
+
+      box1.addEventListener('click', () => {
+        userInput.value += '“What’s the meaning of life, the universe, and everything?”';
+      });
+
+      box2.addEventListener('click', () => {
+        userInput.value += '"Is determining whether P = NP an unsolvable problem?"';
+      });
+
+      box3.addEventListener('click', () => {
+        userInput.value += '"What is the Halting Problem and why is it important?"';
+      });
     </script>
 
 </body>
