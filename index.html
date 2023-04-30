@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#009578">
-    <title>Gym Time</title>
+    <meta name="theme-color" content="#6096ba">
+    <title>NovaMind</title>
     <!-- Reference the manifest -->
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="scripts/manifest.json">
+    <!-- Reference the openai.js file where requests are made to the Open AI API -->
+    <script src="open-ai-scripts/openai.js"></script>
     <link rel="apple-touch-icon" href="images/logo192.png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     
 </head>
 <body>
     <!-- Header -->
     <header>
-        <h1>NovaMind</h1>
+        <h1>NovaMind <span class="beta">(Beta)</span></h1>
         <div class="menu">
           <img class="Settings" src="images/Settings.png">
         </div>
@@ -24,13 +26,13 @@
 
     <!-- Heading -->
     <h2>
-        <img class="Brain" src="images/AI-brain-down.png" alt="AI Brain" style="float: left; margin-right: 10px;">
+        <img class="Brain" src="images/AI-brain-down.png" alt="AI Brain">
         Where AI meets creativity
-        <img class="Brain" src="images/AI-brain-up.png" alt="AI Brain" style="float: right; margin-left: 10px;">
+        <img class="Brain" src="images/AI-brain-up.png" alt="AI Brain">
     </h2>
 
     <!-- Boxes -->
-    <div class="grid-container">
+    <div class="grid-container" id="boxes">
         <div class="column">
           <!-- <p class="Box-heading">Examples</p> -->
           <div class="box">
@@ -46,27 +48,52 @@
         <div class="column">
           <!-- <p class="Box-heading">Cababilities</p> -->
           <div class="box">
-            <p class="Box-text">Remembers what user said earlier in the conversation</p>
+            <p class="Box-text">Limited knowledge of world and events after 2021</p>
           </div>
           <div class="box">
-            <p class="Box-text">Allows user to provide follow-up corrections</p>
+            <p class="Box-text">May occasionally generate incorrect information</p>
           </div>
           <div class="box">
             <p class="Box-text">Trained to decline inappropriate requests</p>
           </div>
         </div>
-      </div>
+    </div>
+
+    <!-- Open AI response text -->
+    <div id="response-box" class="response-box">
+      <p id="response"></p>
+    </div>
 
     <!-- Input field -->
     <form>
-        <input type="text" placeholder="Send a message" class="input-field">
-        <button type="submit" class="input-button"></button>
+      <textarea placeholder="Send a message" class="input-field" id="user-input" rows="4" cols="50"></textarea>
+      <button type="submit" class="input-button" id="submit-button"></button>
     </form>
+
+    <!-- Call the user input to the sendToOpenAI function -->
+    <script>
+        // Get the input field and submit button
+        const inputField = document.getElementById("user-input");
+        const submitButton = document.getElementById("submit-button");
+        const boxes = document.getElementById("boxes");
+        const responseBox = document.getElementById("response-box");
+      
+        // Add an event listener to the submit button
+        submitButton.addEventListener("click", function(event) {
+          event.preventDefault(); // prevent the form from submitting
+          // Hide the boxes
+          boxes.style.display = "none";
+          responseBox.style.display = "block";
+          const userInput = inputField.value; // get the text from the input field
+          // Concatinate ". Make your response less than 100 tokens" ?
+          sendToOpenAI(userInput); // call the function to send the text to OpenAI and display the response
+        });
+    </script>
 
     <!-- Load the service worker -->
     <script>
         if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register("sw.js").then(register => {
+            navigator.serviceWorker.register("scripts/sw.js").then(register => {
                 console.log("SW Registered!");
                 console.log(register);
             }).catch(error => {

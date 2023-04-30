@@ -14,55 +14,53 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 90%;
-    /* padding: 20px; */
     background-color: #6196ba;
-    /* font-size: 24px; */
     font-weight: bold;
-    /* margin: 2%; */
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 12vw;
     color: #ffffff;
 }
 
 .Settings {
-    padding-top: 15px;
-    width: 35px;
-    height: 35px;
-}
+    padding-top: 1.5vh; 
+    width: 7vw; 
+    height: 7vw; 
+ }
 
 h2 {
-    font-size: 20px;
+    font-size: 5vw;
     color: #2D2D2D;
 }
 
 .Brain {
-    width: 27px;
-    height: 27px;
+    padding-top: 0.7vh;
+    width: 5vw;
+    height: 5vw;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
+    grid-gap: 2vh;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 3vh;
 }
 
-.column {
+/* .column {
     padding: 0px;
     border-radius: 15px;
-}
+} */
 
 .box {
     background-color: #264c77;
     color: white;
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    width: 150px;
-    height: 60px;
+    padding: 1.5vh;
+    border-radius: 1vh;
+    margin-bottom: 1.5vh;
+    width: 35vw;
+    height: 8vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,18 +72,20 @@ h2 {
 } */
 
 .Box-text {
-    font-size: 13px;
+    font-size: 3.2vw;
     color: #ffffff;
 }
 
 .input-field {
-    margin-top: 80px;
+    margin-top: 8vh;
     border: 1.5px solid #8b8c89;
-    border-radius: 5px;
-    padding: 15px;
-    width: 270px;
-    height: 25px;
-    font-size: 17px;
+    border-radius: 1vw;
+    padding: 4vw;
+    width: 74vw;
+    height: 6vh;
+    font-size: 4vw;
+    resize: none;
+    overflow-y: hidden;
 }
   
   .input-field:focus {
@@ -94,16 +94,35 @@ h2 {
 }
   
 .input-button {
-    background-image: url("images/Submit-button.png");
+    background-image: url("../images/Submit-arrow.png");
     background-size: cover;
     background-position: center;
-    width: 30px;
-    height: 30px;
+    width: 5.5vw;
+    height: 5.5vw;
     border: none;
-    margin-left: -40px;
-    border-radius: 0 5px 5px 0;
+    margin-left: -9.2vw;
+    margin-bottom: 4.2vh;
+    /* border-radius: 0 5px 5px 0; */
     cursor: pointer;
     background-color: transparent;
     vertical-align: middle;
 }
 
+.response-box {
+    display: none;
+    background-color: #274C77;
+    opacity: 0.95;
+    padding: 0.5vh 0 0 5vw;
+    border-radius: 1vw;
+    height: 42vh;
+    width: 77vw;
+    margin-top: 2vh;
+    font-size: 4vw;
+  }
+
+.beta {
+    font-size: 4vw;
+    color: black;
+    /* margin-left: 5px; */
+
+  }

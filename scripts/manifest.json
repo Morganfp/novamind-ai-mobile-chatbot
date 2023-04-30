@@ -1,0 +1,34 @@
+{
+    "name": "NovaMind",
+    "short_name": "NovaMind",
+    "start_url": "/novamind/",
+    "background_color": "#274c77",
+    "theme_color": "#6096ba",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "../images/logo16.png",
+            "sizes": "16x16",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "../images/logo144.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "../images/logo192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "../images/logo512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
