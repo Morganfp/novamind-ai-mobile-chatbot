@@ -7,15 +7,16 @@ body {
     /* justify-content: center; */
     align-items: center;
     height: 100vh;
+    overflow: hidden;
     color: #e7ecef;
-  }
+}
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 90%;
-    height: 18vh;
+    height: 16vh;
     font-weight: bold;
 }
 
@@ -67,7 +68,7 @@ h2 {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1.8vh;
     text-align: center;
-    padding-top: 3vh;
+    padding-top: 4vh;
 }
 
 .box {
@@ -84,8 +85,8 @@ h2 {
 }
 
 .Box-text {
-    font-size: 3.6vw;
-    color: #ffffff;
+    font-size: 3.5vw;
+    color: #eeeef2;
 }
 
 .input-field {
@@ -134,7 +135,7 @@ a, button {
     opacity: 0.95;
     padding: 1vh 1vh 1vh 1.5vh;
     border-radius: 1vw;
-    height: 42vh;
+    height: 40vh;
     width: 79vw;
     margin-top: 2vh;
     font-size: 4vw;
